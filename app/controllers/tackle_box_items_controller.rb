@@ -27,6 +27,8 @@ class TackleBoxItemsController < ApplicationController
     @bait = Bait.find(params[:bait_id])
     @item = current_user.tackle_box_items.create!(bait: @bait)
 
+    # redirect_to baits_url
+
     @bait.my_tackle_box_item = @item
     
     render @bait
@@ -35,6 +37,8 @@ class TackleBoxItemsController < ApplicationController
   def destroy
     @item = current_user.tackle_box_items.find(params[:id])
     @item.destroy
+
+    # redirect_to baits_url
 
     @bait = @item.bait
     
