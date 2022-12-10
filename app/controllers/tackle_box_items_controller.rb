@@ -27,7 +27,7 @@ class TackleBoxItemsController < ApplicationController
     @bait = Bait.find(params[:bait_id])
     @item = current_user.tackle_box_items.create!(bait: @bait)
 
-    @bait.my_tacklebox_item = @item
+    @bait.my_tackle_box_item = @item
     
     render @bait
   end
