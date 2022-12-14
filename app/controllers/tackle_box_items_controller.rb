@@ -41,7 +41,10 @@ class TackleBoxItemsController < ApplicationController
 
     @bait = @item.bait
     
-    render :create
+    respond_to do |format|
+      format.turbo_stream { render :create }
+      format.html { redirect_to baits_url }
+    end
   end
 
 end
