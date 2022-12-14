@@ -1,6 +1,6 @@
 <div class="search">
   <%= form_with(url: baits_path, method: :get,
-				data: { turbo_frame: "results" }) do |f| %>
+				data: { turbo_frame: "results", turbo_action: "advance" }) do |f| %>
     <div>
       <%= f.search_field :name, placeholder: 'Name...',
             value: params[:name] %>
