@@ -11,7 +11,9 @@
     <div class="name-category">
       <%= @item.bait.name %> &bull; <%= @item.bait.category %>
     </div>
-    <%= render "stats", fish_catches: @fish_catches %>
+		<div id="stats">
+			<%= render "stats", fish_catches: @fish_catches %>
+		</div>
   </div>
 
   <%= render "fish_catches/form", fish_catch: @new_catch %>
