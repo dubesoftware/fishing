@@ -30,6 +30,8 @@ class FishCatchesController < ApplicationController
 
     if @fish_catch.save
       @fish_catches = fish_catches_for_bait(@fish_catch.bait)
+    
+      @new_catch = current_user.fish_catches.new(bait: @fish_catch.bait)
     else
       render :new, status: :unprocessable_entity
     end
