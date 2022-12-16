@@ -36,7 +36,7 @@ class FishCatchesController < ApplicationController
         end
         format.html { redirect_to tackle_box_item_for_catch(@fish_catch) }
       else
-        render :new, status: :unprocessable_entity
+        format.html { render :new, status: :unprocessable_entity }
       end
     end
   end
