@@ -39,6 +39,8 @@ class FishCatchesController < ApplicationController
 
   def destroy
     @fish_catch.destroy
+    
+    @fish_catches = fish_catches_for_bait(@fish_catch.bait)
   end
 
 private
