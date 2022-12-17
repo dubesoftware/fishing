@@ -50,6 +50,7 @@ class FishCatchesController < ApplicationController
 
   def destroy
     @fish_catch.destroy
+    flash.now[:notice] = "Catch successfully deleted"
     
     respond_to do |format|
       format.turbo_stream do
