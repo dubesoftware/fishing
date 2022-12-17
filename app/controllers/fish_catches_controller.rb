@@ -33,11 +33,11 @@ class FishCatchesController < ApplicationController
 
     def create
       @fish_catch = current_user.fish_catches.new(fish_catch_params)
-    
+      
       respond_to do |format|
         if @fish_catch.save
           format.turbo_stream do
-            @fish_catches = fish_catches_for_bait(@fish_catch.bait)      
+            @fish_catches = fish_catches_for_bait(@fish_catch.bait)
             @new_catch = current_user.fish_catches.new(bait: @fish_catch.bait)
           end
           
