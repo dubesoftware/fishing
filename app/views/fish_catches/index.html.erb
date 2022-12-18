@@ -2,7 +2,9 @@
   <%= form_with(url: fish_catches_path, method: :get,
 				data: {
 					turbo_frame: "catches",
-					turbo_action: "advance"
+					turbo_action: "advance",
+					controller: "form",
+					action: "input->form#submit"
 				}) do |f| %>
     <div class="row-1">
       <div>
