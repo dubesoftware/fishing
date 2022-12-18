@@ -1,5 +1,9 @@
 <div class="filter">
-  <%= form_with(url: fish_catches_path, method: :get) do |f| %>
+  <%= form_with(url: fish_catches_path, method: :get,
+				data: {
+					turbo_frame: "catches",
+					turbo_action: "advance"
+				}) do |f| %>
     <div class="row-1">
       <div>
         <%= f.select :bait, @bait_names,
