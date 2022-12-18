@@ -20,7 +20,6 @@ class FishCatchesController < ApplicationController
   def update
     respond_to do |format|
       if @fish_catch.update(fish_catch_params)
-        flash.now[:notice] = "Catch successfully updated."
         format.turbo_stream do
           @fish_catches = fish_catches_for_bait(@fish_catch.bait)
         end
@@ -38,7 +37,6 @@ class FishCatchesController < ApplicationController
     
     respond_to do |format|
       if @fish_catch.save
-        flash.now[:notice] = "Catch successfully created."
         format.turbo_stream do
           @fish_catches = fish_catches_for_bait(@fish_catch.bait)
           @new_catch = current_user.fish_catches.new(bait: @fish_catch.bait)
@@ -52,7 +50,7 @@ class FishCatchesController < ApplicationController
 
   def destroy
     @fish_catch.destroy
-    flash.now[:notice] = "Catch successfully deleted."
+    flash.now[:notice] = "Catch successfully deleted"
     
     respond_to do |format|
       format.turbo_stream do
