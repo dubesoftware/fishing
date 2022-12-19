@@ -23,7 +23,13 @@
 				<%= f.hidden_field :direction, value: params[:direction],
 					 		data: { sort_link_target: "direction" } %>
 				
-				<div class="weight">
+				<div class="weight"
+						 data-controller="range-slider">
+					
+					<div data-range-slider-target="slider">
+						
+					</div>
+					
 					<div class="flex">
 						<%= f.number_field :min_weight,
 							 		value: params[:min_weight] || @min_weight %>
