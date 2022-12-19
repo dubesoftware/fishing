@@ -34,9 +34,11 @@
 					
 					<div class="flex">
 						<%= f.number_field :min_weight,
-							 		value: params[:min_weight] || @min_weight %>
+							 		value: params[:min_weight] || @min_weight,
+									data: { range_slider_target: "currentMin" } %>
 						<%= f.number_field :max_weight,
-							 		value: params[:max_weight] || @max_weight %>
+							 		value: params[:max_weight] || @max_weight,
+									data: { range_slider_target: "currentMax" } %>
 					</div>
 					
 					<div class="label">
