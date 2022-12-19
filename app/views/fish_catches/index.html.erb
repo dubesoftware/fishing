@@ -24,7 +24,9 @@
 					 		data: { sort_link_target: "direction" } %>
 				
 				<div class="weight"
-						 data-controller="range-slider">
+						 data-controller="range-slider"
+						 data-range-slider-min-value="<%= @min_weight %>"
+						 data-range-slider-max-value="<%= @max_weight %>">
 					
 					<div data-range-slider-target="slider">
 						

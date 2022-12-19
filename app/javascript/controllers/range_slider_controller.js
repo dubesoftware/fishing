@@ -7,12 +7,13 @@ import wNumb from 'wnumb'
 export default class extends Controller {
 	
 	static targets = ["slider"]
+	static values = { min: Number, max: Number }
 
   connect() {
 		this.slider = noUiSlider.create(this.sliderTarget, {
 			range: {
-				min: 0,
-				max: 10
+				min: this.minValue,
+				max: this.maxValue
 			},
 			start: [2, 8],
 			step: 1,
