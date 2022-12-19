@@ -15,7 +15,7 @@ export default class extends Controller {
 				min: this.minValue,
 				max: this.maxValue
 			},
-			start: [2, 8],
+			start: [this.currentMinTarget.value, this.currentMaxTarget.value],
 			step: 1,
 			connect: [false, true, false],
 			tooltips: [wNumb({decimals: 0}), wNumb({decimals: 0})]
