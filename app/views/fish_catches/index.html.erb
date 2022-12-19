@@ -22,18 +22,6 @@
 	      
 				<%= f.hidden_field :direction, value: params[:direction],
 					 		data: { sort_link_target: "direction" } %>
-					
-					<div class="flex">
-						<%= f.number_field :min_weight,
-							 		value: params[:min_weight] || @min_weight %>
-						<%= f.number_field :max_weight,
-							 		value: params[:max_weight] || @max_weight %>
-					</div>
-					
-					<div class="label">
-						Weight
-					</div>
-				</div>
 
 	    </div>
 	    <div class="row-2">
