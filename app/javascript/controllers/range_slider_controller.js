@@ -26,6 +26,8 @@ export default class extends Controller {
 				(handle == 0) ? this.currentMinTarget : this.currentMaxTarget
 			
 			target.value = Math.round(unencoded[handle])
+			
+			target.dispatchEvent(new CustomEvent("input", { bubbles: true }))
 		})
   }
 	
