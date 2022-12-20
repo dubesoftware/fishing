@@ -2,11 +2,6 @@ class FishCatch < ApplicationRecord
   belongs_to :bait
   belongs_to :user
   has_many :likes, dependent: :destroy
-  
-  after_create_commit -> {
-    broadcast_prepend_to "activity", target: catches,
-                         partial: "activity/fish_catch"
-  }
 
   SPECIES = [
     "Brown Trout",
