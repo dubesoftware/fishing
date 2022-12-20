@@ -15,6 +15,10 @@ class FishCatch < ApplicationRecord
       target: "#{dom_id(self)}_details",
       partial: "activity/catch_details"
   }
+  
+  after_destroy_commit -> {
+    broadcast_remove_to "activity"
+  }
 
   SPECIES = [
     "Brown Trout",
