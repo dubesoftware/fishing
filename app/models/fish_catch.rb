@@ -1,4 +1,6 @@
 class FishCatch < ApplicationRecord
+  include ActionView::RecordIdentifier
+  
   belongs_to :bait
   belongs_to :user
   has_many :likes, dependent: :destroy
@@ -6,6 +8,12 @@ class FishCatch < ApplicationRecord
   after_create_commit -> {
     broadcast_prepend_to "activity", target: "catches",
                          partial: "activity/fish_catch"
+  }
+  
+  after_update_commit -> {
+    broadcast_replace_to "activity",
+      target: "#{dom_id(self)}_details",
+      partial: "activity/catch_details"
   }
 
   SPECIES = [
