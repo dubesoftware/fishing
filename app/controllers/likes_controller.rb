@@ -5,12 +5,9 @@ class LikesController < ApplicationController
   def create
     return if existing_like
 
-    like = @fish_catch.likes.create!(user: current_user)
-    
-    @fish_catch.like = like
+    @fish_catch.likes.create!(user: current_user)
 
-    render partial: "activity/catch_likes",
-           locals: { fish_catch: @fish_catch }
+    redirect_to activity_url
   end
 
   def destroy
