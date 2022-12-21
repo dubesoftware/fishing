@@ -7,7 +7,7 @@ class LikesController < ApplicationController
 
     like = @fish_catch.likes.create!(user: current_user)
     
-    @fish_catch.like = like 
+    @fish_catch.my_like = like 
 
     render partial: "activity/catch_likes",
            locals: { fish_catch: @fish_catch }
