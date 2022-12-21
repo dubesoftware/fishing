@@ -5,6 +5,6 @@
 	           partial: "activity/fish_catch" %>
 </div>
 
-<%= turbo_frame_tag "users", src: users_path do %>
+<%= turbo_frame_tag "users", src: users_path, loading: :lazy do %>
 	<div class="loader">Loading...</div>
 <% end %>
